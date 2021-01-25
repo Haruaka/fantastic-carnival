@@ -1,11 +1,20 @@
 //Hook-based React Practice Assignment
+
+/*
+Task Object:
+{
+  id: number,
+  task: string,
+  isComplete: boolean,
+}
+*/
 import React, { useState } from "react";
 
 // THE COMPONENT =====================================================
-export default function Task() {
+export default function Task(props) {
   return (
     <div class="container">
-        I'm a task you can call!
+      {props.task.id} + {props.task.desc}
     </div>
   )
 }

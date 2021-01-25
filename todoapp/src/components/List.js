@@ -1,13 +1,18 @@
 //Hook-based React Practice Assignment
+/*
+List Object:
+{
+  name: string,
+  tasks: [object]
+}
+*/
 import React, { useState } from "react";
-import Task from "./Task";
 
 // THE COMPONENT =====================================================
-export default function List() {
+export default function List(props) {
   return (
     <div class="container">
-        <Task/> 1
-        <Task/> 2
+      List Name {props.list.name}
     </div>
   )
 }
