@@ -6,10 +6,13 @@ import List from "../components/List";
 export default function ListView(props) {
   return (
     <div class="container-fluid">
-      {props.lists.map(list => {
-        return <List key={list.id} list={list}/>
-      })}
-      <button type="button" className="btn btn-primary" onClick={() => props.changeView(1)}>Test</button>
+      <div class="row row-cols-3">
+        {props.lists.map(list => {
+          return <div class="col" onClick={() => props.changeView(list.id)}>
+            <List key={list.id} list={list}/>
+          </div>
+        })}
+      </div>
       <button type="button" className="btn btn-primary">+</button>
     </div>
   )
