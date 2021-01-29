@@ -21,8 +21,13 @@ export default function App() {
     setTempData(tempData.filter(list => list.id !== viewState));
   }
 
+  const setTasks = (list) => {
+    setTempData([...tempData, list]);
+    console.log("I ran.", tempData);
+  }
+
   if (viewState > 0) {
-    return <TaskView list={getListData(viewState)} changeView={changeView} deleteList={deleteList}/>
+    return <TaskView list={getListData(viewState)} changeView={changeView} deleteList={deleteList} setTasks={setTasks}/>
   }
 
   return <ListView lists={tempData} changeView={changeView} addList={addList}/>
