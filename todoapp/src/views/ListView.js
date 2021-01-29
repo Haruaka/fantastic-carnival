@@ -8,12 +8,12 @@ export default function ListView(props) {
     <div class="container-fluid">
       <div class="row row-cols-3">
         {props.lists.map(list => {
-          return <div class="col" onClick={() => props.changeView(list.id)}>
+          return <div className="col" onClick={() => props.changeView(list.id)}>
             <List key={list.id} list={list}/>
           </div>
         })}
       </div>
-      <button type="button" className="btn btn-primary">+</button>
+      <button type="button" className="btn btn-primary" onClick={props.addList}>+</button>
     </div>
   )
 }
