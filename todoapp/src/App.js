@@ -13,12 +13,16 @@ export default function App() {
   const getListData = (num) => { return tempData.find(list => { return list.id === num})}
 
   const addList = () => {
-    console.log("I pressed.");
     setTempData([...tempData, {id: tempData.length + 2, name: "New To-Do List", tasks:[]}]);
   }
 
+  const deleteList = () => {
+    setViewState(0);
+    setTempData(tempData.filter(list => list.id !== viewState));
+  }
+
   if (viewState > 0) {
-    return <TaskView list={getListData(viewState)} changeView={changeView}/>
+    return <TaskView list={getListData(viewState)} changeView={changeView} deleteList={deleteList}/>
   }
 
   return <ListView lists={tempData} changeView={changeView} addList={addList}/>

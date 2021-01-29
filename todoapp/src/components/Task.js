@@ -14,13 +14,13 @@ import React, { useState } from "react";
 export default function Task(props) {
   if (props.isEdit) {
     return (
-      <li class="list-group-item">
+      <li className="list-group-item">
         <input type="text" value={`${props.task.id} + ${props.task.desc}`}/>
         <button>delete</button>
       </li>
     )
   }
   return (
-    <li class="list-group-item">{props.task.id} + {props.task.desc}</li>
+    <li className="list-group-item">{props.task.id} + {props.task.desc}</li>
   )
 }

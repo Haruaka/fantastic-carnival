@@ -43,7 +43,7 @@ export default function TaskView(props) {
           </div>
         </div>
         <button type="button" className="btn btn-primary" onClick={() => props.changeView(0)}>Return</button>
-        <button type="button" className="btn btn-danger" onClick={() => props.changeView(0)}>Delete</button>
+        <button type="button" className="btn btn-danger" onClick={props.deleteList}>Delete List</button>
         <button type="button" className="btn btn-primary" onClick={turnOnEditMode}>Edit</button>
       </div>
     )
